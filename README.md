@@ -2,6 +2,6 @@
 A solid react calendar that is stable and good looking
 
 # Usage
-```nextjs
+```javascript
 import DatePicker from "solid-react-calendar";
 ```
