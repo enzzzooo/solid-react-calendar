@@ -1,0 +1,25 @@
+{
+  "name": "react-calendar",
+  "version": "1.0.0",
+  "description": "A solid react calendar that is stable and good looking",
+  "main": "DatePicker.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enzzzooo/React-Calendar.git"
+  },
+  "keywords": [
+    "calendar"
+  ],
+  "author": "enzzzooo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enzzzooo/React-Calendar/issues"
+  },
+  "homepage": "https://github.com/enzzzooo/React-Calendar#readme",
+  "dependencies": {
+    "npm": "^11.0.0"
+  }
+}
