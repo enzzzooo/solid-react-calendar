@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { FixedSizeList as List, ListChildComponentProps } from "react-window";
 import {
   format,
@@ -13,6 +13,7 @@ import {
   getDay,
   startOfYear,
   endOfYear,
+  startOfMonth, // Added import
 } from "date-fns";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -40,7 +41,8 @@ export default function Calendar({
 
     let currentMonth = startOfCurrentYear;
     while (currentMonth <= endOfNextYear) {
-      if (!isBefore(currentMonth, today)) {
+      if (!isBefore(currentMonth, startOfMonth(today))) {
+        // Modified condition
         result.push(currentMonth);
       }
       currentMonth = addMonths(currentMonth, 1);
@@ -70,11 +72,7 @@ export default function Calendar({
     const emptyDays = Array(dayOfWeek).fill(null);
 
     return (
-      <div
-        style={style}
-        key={month.toString()}
-        className="p-4 mb-6 no-scrollbar"
-      >
+      <div style={style} key={month.toString()} className="p-4 mb-6 ">
         <h3 className="text-lg font-semibold mb-2">
           {format(month, "MMMM yyyy")}
         </h3>
@@ -131,7 +129,7 @@ export default function Calendar({
                       ? "text-gray-900"
                       : ""
                   }
-              
+                  ${isPastDay && !isSelected ? "gray-200" : ""}
                 `}
               >
                 {format(day, "d")}
@@ -150,7 +148,6 @@ export default function Calendar({
       itemCount={months.length}
       itemSize={300}
       width={280}
-      className="scrollbar-hide"
     >
       {renderMonth}
     </List>
