@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useMemo } from "react";
 import { FixedSizeList as List, ListChildComponentProps } from "react-window";
 import {
@@ -69,7 +70,11 @@ export default function Calendar({
     const emptyDays = Array(dayOfWeek).fill(null);
 
     return (
-      <div style={style} key={month.toString()} className="p-4">
+      <div
+        style={style}
+        key={month.toString()}
+        className="p-4 mb-6 no-scrollbar"
+      >
         <h3 className="text-lg font-semibold mb-2">
           {format(month, "MMMM yyyy")}
         </h3>
@@ -139,17 +144,15 @@ export default function Calendar({
   };
 
   return (
-    <div onClick={onClose}>
-      <List
-        ref={listRef}
-        height={300}
-        itemCount={months.length}
-        itemSize={300}
-        width={280}
-        className="scrollbar-hide"
-      >
-        {renderMonth}
-      </List>
-    </div>
+    <List
+      ref={listRef}
+      height={300}
+      itemCount={months.length}
+      itemSize={300}
+      width={280}
+      className="scrollbar-hide"
+    >
+      {renderMonth}
+    </List>
   );
 }
