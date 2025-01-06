@@ -1,6 +1,6 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A solid react calendar that is stable and good looking",
   "main": "DatePicker.tsx",
   "scripts": {
