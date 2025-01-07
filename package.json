@@ -1,8 +1,8 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A solid react calendar that is stable and good looking",
-  "main": "DatePicker.tsx",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,11 +19,17 @@
     "url": "https://github.com/enzzzooo/solid-react-calendar/issues"
   },
   "homepage": "https://github.com/enzzzooo/solid-react-calendar#readme",
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
     "next": "^15.1.3",
     "npm": "^11.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
