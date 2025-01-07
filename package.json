@@ -1,6 +1,6 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A solid react calendar that is stable and good looking",
   "main": "index.js",
   "scripts": {
