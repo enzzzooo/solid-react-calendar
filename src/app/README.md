@@ -1,0 +1,1 @@
+used this https://blacksheepcode.com/posts/publish_a_react_package_using_nextjs_as_a_base
