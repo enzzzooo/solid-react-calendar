@@ -1,12 +1,13 @@
 {
   "name": "solid-react-calendar",
-  "version": "0.1.0",
+  "version": "1.0.9",
   "main": "./dist/exports.js",
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "exports": {
     ".": "./dist/exports.js"
-  }, 
-  
+  },
   "scripts": {
     "next:dev": "next dev",
     "next:build": "next build",
@@ -20,17 +21,22 @@
     "react-dom": ">=19.0.0"
   },
   "devDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.4",
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@types/react-window": "^1.8.8",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "next": "15.1.4",
+    "postcss": "^8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "react-window": "^1.8.11"
   }
 }
