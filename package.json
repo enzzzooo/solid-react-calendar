@@ -1,12 +1,12 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "./dist/exports.js",
   "files": [
     "./dist"
   ],
   "exports": {
-    ".": "./dist/exports.js"
+    ".": "./dist/exports.d.js"
   },
   "scripts": {
     "next:dev": "next dev",
