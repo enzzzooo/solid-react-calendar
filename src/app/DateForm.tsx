@@ -1,6 +1,6 @@
 "use client";
 import { useActionState } from "react";
-import DatePicker from "../../dist";
+import DatePicker from "solid-react-calendar";
 import { SomethingAction } from "./actions";
 export default function DateForm() {
   const [formState, formAction] = useActionState(SomethingAction, {
