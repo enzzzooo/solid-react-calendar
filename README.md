@@ -8,7 +8,7 @@
 ```javascript
 'use client'
 
-import DatePicker from "solid-react-calendar";
+import { DatePicker } from "solid-react-calendar";
 import { useActionState } from "react";
 
 export default function page(){
