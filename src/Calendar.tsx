@@ -13,7 +13,6 @@ import {
   getDay,
   startOfYear,
   endOfYear,
-  startOfMonth, // Added import
 } from "date-fns";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -41,8 +40,7 @@ export default function Calendar({
 
     let currentMonth = startOfCurrentYear;
     while (currentMonth <= endOfNextYear) {
-      if (!isBefore(currentMonth, startOfMonth(today))) {
-        // Modified condition
+      if (!isBefore(currentMonth, today)) {
         result.push(currentMonth);
       }
       currentMonth = addMonths(currentMonth, 1);
@@ -72,7 +70,11 @@ export default function Calendar({
     const emptyDays = Array(dayOfWeek).fill(null);
 
     return (
-      <div style={style} key={month.toString()} className="p-4 mb-6 ">
+      <div
+        style={style}
+        key={month.toString()}
+        className="p-4 mb-6 no-scrollbar"
+      >
         <h3 className="text-lg font-semibold mb-2">
           {format(month, "MMMM yyyy")}
         </h3>
@@ -129,7 +131,7 @@ export default function Calendar({
                       ? "text-gray-900"
                       : ""
                   }
-                  ${isPastDay && !isSelected ? "gray-200" : ""}
+              
                 `}
               >
                 {format(day, "d")}
@@ -148,6 +150,7 @@ export default function Calendar({
       itemCount={months.length}
       itemSize={300}
       width={280}
+      className="no-scrollbar"
     >
       {renderMonth}
     </List>

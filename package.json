@@ -1,6 +1,6 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A well-designed solid react calendar",
   "keywords": [
     "calendar",
@@ -8,16 +8,18 @@
     "nextjs",
     "date"
   ],
+  {
+    "license": "MIT"
+  },
   "repository": "github:enzzzooo/solid-react-calendar",
   "homepage": "https://github.com/enzzzooo/solid-react-calendar",
-  "main": "./dist/index.js",
+  "type": "module",
+  "main": "./dist/es/index.js",
   "files": [
-    "./dist"
+    "./dist",
+    "dist"
   ],
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.d.js"
-  },
+  "types": "./dist/es/index.d.ts",
   "scripts": {
     "next:dev": "next dev",
     "next:build": "next build",
@@ -36,7 +38,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-window": "^1.8.8",
-    "bunchee": "^6.2.0",
+    "bunchee": "^6.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "next": "15.1.4",
@@ -49,5 +51,38 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "react-window": "^1.8.11"
+  },
+  "module": "./dist/es/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/es/index.d.ts",
+        "default": "./dist/es/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./DatePicker": {
+      "import": {
+        "types": "./dist/es/DatePicker.d.ts",
+        "default": "./dist/es/DatePicker.js"
+      },
+      "require": {
+        "types": "./dist/cjs/DatePicker.d.cts",
+        "default": "./dist/cjs/DatePicker.cjs"
+      }
+    },
+    "./Calendar": {
+      "import": {
+        "types": "./dist/es/Calendar.d.ts",
+        "default": "./dist/es/Calendar.js"
+      },
+      "require": {
+        "types": "./dist/cjs/Calendar.d.cts",
+        "default": "./dist/cjs/Calendar.cjs"
+      }
+    }
   }
 }
