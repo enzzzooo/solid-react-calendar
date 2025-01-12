@@ -1,2 +1,1 @@
-import { DatePicker } from "./DatePicker";
-export { DatePicker };
+export { DatePicker } from "./DatePicker";
