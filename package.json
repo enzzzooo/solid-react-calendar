@@ -7,6 +7,7 @@
     "react",
     "nextjs",
     "date",
+    "month",
     "tailwind"
   ],
   "license": "MIT",
@@ -21,10 +22,6 @@
   ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "next:dev": "next dev",
-    "next:build": "next build",
-    "next:start": "next start",
-    "next:lint": "next lint",
     "build": "bunchee",
     "prepublishOnly": "npm run build"
   },
