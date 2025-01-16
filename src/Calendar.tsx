@@ -18,7 +18,7 @@ import {
 const CURRENT_YEAR = new Date().getFullYear();
 
 interface CalendarProps {
-  selectedDate: Date;
+  selectedDate: Date | null;
   onChange: (date: Date) => void;
   minDate: Date;
   onClose: () => void;
@@ -49,7 +49,7 @@ export default function Calendar({
   }, [today]);
 
   useEffect(() => {
-    if (listRef.current) {
+    if (selectedDate && listRef.current) {
       const index = months.findIndex((month) =>
         isSameMonth(month, selectedDate)
       );
@@ -91,7 +91,7 @@ export default function Calendar({
             <div key={`empty-${index}`} className="w-9 h-9" />
           ))}
           {days.map((day) => {
-            const isSelected = isSameDay(day, selectedDate);
+            const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
             const isDisabled = isBefore(day, minDate);
             const isWeekend = [0, 6].includes(getDay(day));
             const isPastDay = isBefore(day, today);

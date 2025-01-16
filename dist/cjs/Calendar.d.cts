@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface CalendarProps {
-    selectedDate: Date;
+    selectedDate: Date | null;
     onChange: (date: Date) => void;
     minDate: Date;
     onClose: () => void;

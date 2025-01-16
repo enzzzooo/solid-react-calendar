@@ -9,9 +9,7 @@ interface DatePickerProps {
 
 export default function DatePicker({ className }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedDate, setSelectedDate] = useState<Date>(
-    startOfDay(new Date())
-  );
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
 
   const handleDateChange = useCallback((date: Date) => {
@@ -21,6 +19,10 @@ export default function DatePicker({ className }: DatePickerProps) {
 
   const toggleCalendar = useCallback(() => {
     setIsOpen((prev) => !prev);
+  }, []);
+
+  useEffect(() => {
+    setSelectedDate(startOfDay(new Date()));
   }, []);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function DatePicker({ className }: DatePickerProps) {
         type="button"
         className=" px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
-        {format(selectedDate, "MMM dd, yyyy")}
+        {selectedDate ? format(selectedDate, "MMM dd, yyyy") : "Loading..."}
       </button>
       {isOpen && (
         <div
@@ -64,7 +66,7 @@ export default function DatePicker({ className }: DatePickerProps) {
       <input
         type="hidden"
         name="date"
-        value={format(selectedDate, "yyyy-MM-dd")}
+        value={selectedDate ? format(selectedDate, "yyyy-MM-dd") : ""}
       />
     </div>
   );

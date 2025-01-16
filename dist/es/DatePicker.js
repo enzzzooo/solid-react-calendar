@@ -5,7 +5,7 @@ import Calendar from './Calendar.js';
 
 function DatePicker({ className }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(startOfDay(new Date()));
+    const [selectedDate, setSelectedDate] = useState(null);
     const calendarRef = useRef(null);
     const handleDateChange = useCallback((date)=>{
         setSelectedDate(date);
@@ -13,6 +13,9 @@ function DatePicker({ className }) {
     }, []);
     const toggleCalendar = useCallback(()=>{
         setIsOpen((prev)=>!prev);
+    }, []);
+    useEffect(()=>{
+        setSelectedDate(startOfDay(new Date()));
     }, []);
     useEffect(()=>{
         function handleClickOutside(event) {
@@ -31,7 +34,7 @@ function DatePicker({ className }) {
         onClick: toggleCalendar,
         type: "button",
         className: " px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    }, format(selectedDate, "MMM dd, yyyy")), isOpen && /*#__PURE__*/ React.createElement("div", {
+    }, selectedDate ? format(selectedDate, "MMM dd, yyyy") : "Loading..."), isOpen && /*#__PURE__*/ React.createElement("div", {
         ref: calendarRef,
         className: "absolute z-20 w-auto min-w-[280px] mt-1 bg-white rounded-md shadow-lg pointer-events-auto"
     }, /*#__PURE__*/ React.createElement(Calendar, {
@@ -42,7 +45,7 @@ function DatePicker({ className }) {
     })), /*#__PURE__*/ React.createElement("input", {
         type: "hidden",
         name: "date",
-        value: format(selectedDate, "yyyy-MM-dd")
+        value: selectedDate ? format(selectedDate, "yyyy-MM-dd") : ""
     }));
 }
 

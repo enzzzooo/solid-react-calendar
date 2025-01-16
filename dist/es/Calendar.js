@@ -23,7 +23,7 @@ function Calendar({ selectedDate, onChange, minDate, onClose }) {
         today
     ]);
     useEffect(()=>{
-        if (listRef.current) {
+        if (selectedDate && listRef.current) {
             const index = months.findIndex((month)=>isSameMonth(month, selectedDate));
             if (index !== -1) {
                 listRef.current.scrollToItem(index, "center");
@@ -64,7 +64,7 @@ function Calendar({ selectedDate, onChange, minDate, onClose }) {
                 key: `empty-${index}`,
                 className: "w-9 h-9"
             })), days.map((day)=>{
-            const isSelected = isSameDay(day, selectedDate);
+            const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
             const isDisabled = isBefore(day, minDate);
             const isWeekend = [
                 0,

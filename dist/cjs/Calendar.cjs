@@ -29,7 +29,7 @@ function Calendar({ selectedDate, onChange, minDate, onClose }) {
         today
     ]);
     React.useEffect(()=>{
-        if (listRef.current) {
+        if (selectedDate && listRef.current) {
             const index = months.findIndex((month)=>dateFns.isSameMonth(month, selectedDate));
             if (index !== -1) {
                 listRef.current.scrollToItem(index, "center");
@@ -70,7 +70,7 @@ function Calendar({ selectedDate, onChange, minDate, onClose }) {
                 key: `empty-${index}`,
                 className: "w-9 h-9"
             })), days.map((day)=>{
-            const isSelected = dateFns.isSameDay(day, selectedDate);
+            const isSelected = selectedDate ? dateFns.isSameDay(day, selectedDate) : false;
             const isDisabled = dateFns.isBefore(day, minDate);
             const isWeekend = [
                 0,
