@@ -5,4 +5,8 @@ export default {
     extend: {},
   },
   plugins: [],
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    // ...additional purge settings...
+  },
 };
