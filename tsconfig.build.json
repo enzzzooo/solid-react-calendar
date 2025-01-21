@@ -23,7 +23,8 @@
       "declaration": true
     },
     "include": [
-      "src/exports.ts", 
+      "src/**/*.ts",
+      "src/**/*.tsx"
     ], 
     
   }  
