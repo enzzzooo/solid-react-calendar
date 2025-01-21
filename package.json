@@ -1,6 +1,6 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.1.11",
+  "version": "1.1.22",
   "description": "A well-designed solid react calendar",
   "keywords": [
     "calendar",
@@ -12,7 +12,10 @@
   ],
   "license": "MIT",
   "author": "enzzzooo",
-  "repository": "github:enzzzooo/solid-react-calendar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enzzzooo/solid-react-calendar.git"
+  },
   "homepage": "https://github.com/enzzzooo/solid-react-calendar",
   "type": "module",
   "main": "./dist/index.js",
@@ -22,7 +25,7 @@
   ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "build:css": "bunchee build src/styles.css --out-file dist/styles.min.css",
+    "build:css": "bunchee build src/main.css --out-file dist/style.min.css",
     "build": "npm run build:css && bunchee build src/index.tsx --out-file dist/bundle.js",
     "prepublishOnly": "npm run build"
   },

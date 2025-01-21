@@ -91,7 +91,9 @@ export default function Calendar({
             <div key={`empty-${index}`} className="w-9 h-9" />
           ))}
           {days.map((day) => {
-            const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
+            const isSelected = selectedDate
+              ? isSameDay(day, selectedDate)
+              : false;
             const isDisabled = isBefore(day, minDate);
             const isWeekend = [0, 6].includes(getDay(day));
             const isPastDay = isBefore(day, today);
