@@ -2,15 +2,18 @@
 import postcss from "postcss";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
-import postcssImport from "postcss-import";
+import cssnano from "cssnano";
 
 export default {
-    input: "src/styles/main.css",
-    output: [{ file: "dist/index.css", format: "es" }],
-    plugins: [
-        postcss({
-            extract: true,
-            minimize: true,
-        }),
-    ],
-}
+  input: "src/main.css",
+  output: [{ file: "dist/index.css", format: "es" }],
+  plugins: [
+    {
+      name: "css-minification",
+      async transform({ content }) {
+        const result = await cssnano.process(content, { from: undefined });
+        return { code: result.css };
+      },
+    },
+  ],
+};

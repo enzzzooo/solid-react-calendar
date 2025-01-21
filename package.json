@@ -1,6 +1,6 @@
 {
   "name": "solid-react-calendar",
-  "version": "1.1.22",
+  "version": "1.1.24",
   "description": "A well-designed solid react calendar",
   "keywords": [
     "calendar",
@@ -25,7 +25,7 @@
   ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "build:css": "bunchee build src/main.css --out-file dist/style.min.css",
+    "build:css": "bunchee build src/main.css --out-file dist/index.css",
     "build": "npm run build:css && bunchee build src/index.tsx --out-file dist/bundle.js",
     "prepublishOnly": "npm run build"
   },
