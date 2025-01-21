@@ -28,7 +28,7 @@
   ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "build": "& tailwindcss -i src/styles.css -o ./dist/style.css --minify",rm -rf dist && bunchee &
+    "build": "rm -rf dist && bunchee --config bunchee.config.js",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
