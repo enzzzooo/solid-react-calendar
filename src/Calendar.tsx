@@ -60,7 +60,7 @@ export default function Calendar({
   }, [selectedDate, months]);
 
   const renderMonth = ({ index, style }: ListChildComponentProps) => {
-    const month = months[index];
+    const month = months[index] || 0;
     const days = eachDayOfInterval({
       start: month,
       end: endOfMonth(month),
