@@ -1,4 +1,5 @@
 "use client";
+import "./index.css";
 import React, { useRef, useEffect, useMemo } from "react";
 import { FixedSizeList as List, ListChildComponentProps } from "react-window";
 import {

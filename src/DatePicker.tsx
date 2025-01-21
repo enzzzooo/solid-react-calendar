@@ -1,4 +1,5 @@
 "use client";
+import "./index.css";
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import { format, startOfDay } from "date-fns";
 import Calendar from "./Calendar";
