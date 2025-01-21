@@ -18,6 +18,7 @@
 /out/
 
 # production
+/dist
 /build
 
 # misc
