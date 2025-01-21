@@ -23,13 +23,9 @@
     "./dist",
     "dist"
   ],
-  "workspaces": [
-    "test-app"
-  ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/index.css -o ./dist/index.css --minify",
-    "build": "bunchee && npm run build:css",
+    "build": "bunchee && tailwindcss -i src/style.css -o ./dist/style.css --minify",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
