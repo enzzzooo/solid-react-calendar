@@ -25,7 +25,8 @@
   ],
   "types": "./dist/es/index.d.ts",
   "scripts": {
-    "build": "bunchee",
+    "build:css": "tailwindcss -i ./src/main.css -o ./dist/index.css --minify",
+    "build": "bunchee && npm run build:css",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
