@@ -19,6 +19,7 @@ export default [
       format: "cjs",
       sourcemap: true, // Enable sourcemaps
       preserveModules: true, // Preserves module structure
+      preserveModulesRoot: "src", // Add this line
       exports: "named",
     },
     plugins: [
@@ -60,6 +61,7 @@ export default [
       format: "esm",
       sourcemap: true, // Enable sourcemaps
       preserveModules: true, // Preserves module structure
+      preserveModulesRoot: "src", // Add this line
     },
     plugins: [
       json(),
