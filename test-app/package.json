@@ -12,7 +12,8 @@
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "solid-react-calendar": "*"
+    "solid-react-calendar": "file:.."
+    
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
