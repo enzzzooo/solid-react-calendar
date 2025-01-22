@@ -17,6 +17,7 @@ export default [
     output: {
       dir: "dist/cjs", // Output directory for CJS modules
       format: "cjs",
+      sourcemap: true, // Enable sourcemaps
       preserveModules: true, // Preserves module structure
       exports: "named",
     },
@@ -28,12 +29,15 @@ export default [
         tsconfig: "./tsconfig.json",
         useTsconfigDeclarationDir: true,
         clean: true,
+        sourceMap: true, // Ensure TypeScript plugin generates sourcemaps
+        inlineSources: true,
       }), // Compiles TypeScript with rollup-plugin-typescript2
       postcss({
         plugins: [tailwindcss(), autoprefixer()],
         modules: false, // Disable CSS Modules
         extract: "style.min.css", // Extract CSS to a separate file
         minimize: true, // Minify the CSS
+        sourceMap: true, // Enable sourcemaps for PostCSS
       }), // Processes CSS with PostCSS
       preserveDirectives(), // Preserves 'use client' and 'use server'
       terser({
@@ -54,6 +58,7 @@ export default [
     output: {
       dir: "dist/esm", // Output directory for ESM modules
       format: "esm",
+      sourcemap: true, // Enable sourcemaps
       preserveModules: true, // Preserves module structure
     },
     plugins: [
@@ -64,12 +69,15 @@ export default [
         tsconfig: "./tsconfig.json",
         useTsconfigDeclarationDir: true,
         clean: true,
+        sourceMap: true, // Ensure TypeScript plugin generates sourcemaps
+        inlineSources: true,
       }),
       postcss({
         plugins: [tailwindcss(), autoprefixer()],
         modules: false,
         extract: "style.min.css",
         minimize: true,
+        sourceMap: true, // Enable sourcemaps for PostCSS
       }),
       preserveDirectives(),
       terser({

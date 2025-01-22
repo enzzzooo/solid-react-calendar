@@ -11,6 +11,8 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,             // Enable sourcemap generation
+    "inlineSources": true   
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

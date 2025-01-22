@@ -19,6 +19,7 @@
   "homepage": "https://github.com/enzzzooo/solid-react-calendar",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -26,7 +27,6 @@
   "workspaces": [
     "test-app"
   ],
-  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && rollup -c ",
