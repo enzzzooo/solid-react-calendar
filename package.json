@@ -24,9 +24,6 @@
     "dist"
   ],
   "type": "module",
-  "workspaces": [
-    "test-app"
-  ],
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && rollup -c ",

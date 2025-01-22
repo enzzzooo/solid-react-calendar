@@ -21,7 +21,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "solid-react-calendar": ["../solid-react-calendar/dist"]
     }
   },
   "include": ["src", "app", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
