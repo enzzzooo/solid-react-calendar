@@ -13,7 +13,7 @@ import autoprefixer from "autoprefixer";
 export default [
   // 📦 CommonJS (CJS) Build Configuration
   {
-    input: "src/index.ts",
+    input: "src/index.js",
     output: {
       dir: "dist/cjs", // Output directory for CJS modules
       format: "cjs",
@@ -36,7 +36,7 @@ export default [
       postcss({
         plugins: [tailwindcss(), autoprefixer()],
         modules: false, // Disable CSS Modules
-        extract: "style.min.css", // Extract CSS to a separate file
+        extract: "index.min.css", // Extract CSS to a separate file
         minimize: true, // Minify the CSS
         sourceMap: true, // Enable sourcemaps for PostCSS
       }), // Processes CSS with PostCSS
@@ -55,7 +55,7 @@ export default [
 
   // 📦 ES Module (ESM) Build Configuration
   {
-    input: "src/index.ts",
+    input: "src/index.js",
     output: {
       dir: "dist/esm", // Output directory for ESM modules
       format: "esm",
@@ -77,7 +77,7 @@ export default [
       postcss({
         plugins: [tailwindcss(), autoprefixer()],
         modules: false,
-        extract: "style.min.css",
+        extract: "index.min.css",
         minimize: true,
         sourceMap: true, // Enable sourcemaps for PostCSS
       }),
@@ -96,7 +96,7 @@ export default [
 
   // 📝 Type Definitions Build Configuration
   {
-    input: "src/index.ts",
+    input: "src/index.js",
     output: { file: "dist/index.d.ts", format: "es" },
     plugins: [dts()],
     external: [/\.css$/], // Exclude CSS imports
