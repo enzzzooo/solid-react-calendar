@@ -66,32 +66,32 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/es/index.d.ts",
-        "default": "./dist/es/index.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/esm/index.js"
       },
       "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cjs/index.js"
       }
     },
     "./DatePicker": {
       "import": {
-        "types": "./dist/es/DatePicker.d.ts",
-        "default": "./dist/es/DatePicker.js"
+        "types": "./dist/DatePicker.d.ts",
+        "default": "./dist/esm/DatePicker.js"
       },
       "require": {
-        "types": "./dist/cjs/DatePicker.d.cts",
-        "default": "./dist/cjs/DatePicker.cjs"
+        "types": "./dist/DatePicker.d.ts",
+        "default": "./dist/cjs/DatePicker.js"
       }
     },
     "./Calendar": {
       "import": {
-        "types": "./dist/es/Calendar.d.ts",
-        "default": "./dist/es/Calendar.js"
+        "types": "./dist/Calendar.d.ts",
+        "default": "./dist/esm/Calendar.js"
       },
       "require": {
-        "types": "./dist/cjs/Calendar.d.cts",
-        "default": "./dist/cjs/Calendar.cjs"
+        "types": "./dist/Calendar.d.ts",
+        "default": "./dist/cjs/Calendar.js"
       }
     }
   }
