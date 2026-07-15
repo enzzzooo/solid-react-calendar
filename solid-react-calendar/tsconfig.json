@@ -6,13 +6,14 @@
     "declarationDir": "dist",
     "outDir": "dist",
     "strict": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,             // Enable sourcemap generation
-    "inlineSources": true   
+    "sourceMap": true,
+    "inlineSources": true,
+    "resolveJsonModule": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
