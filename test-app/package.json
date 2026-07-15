@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:calendar": "npm --prefix ../solid-react-calendar ci && npm --prefix ../solid-react-calendar run build",
+    "predev": "npm run build:calendar",
     "dev": "next dev --turbopack",
+    "prebuild": "npm run build:calendar",
     "build": "next build",
+    "prestart": "npm run build:calendar",
     "start": "next start",
     "lint": "next lint"
   },
